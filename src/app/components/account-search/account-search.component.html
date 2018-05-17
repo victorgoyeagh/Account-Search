@@ -1,0 +1,35 @@
+<section>
+
+    <div class="row accounts-serach">
+        <div class="col-12">
+            <form id="fmSearchPanel" name="fmSearchPanel" [formGroup]="fmSearchPanel" autocomplete="off">
+
+                <div class="row">
+                    <div class="input-group">
+                        <div class="col-12">
+                            <label class=" accounts-serach--label" for="txtSearch"><strong>Search for an account by account name or ID</strong></label>
+                        </div>
+                        <div class="col-sm">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input (change)="UpdateDynamicSearch()" #dynamicSearch type="checkbox" title="Check to perform dynamic search">
+                                    </div>
+                                </div>
+                                <input #txtSearch formControlName="txtSearch" id="txtSearch" name="txtSearch" type="text" class="form-control form-control-sm" placeholder="Enter an account name or ID"
+                                />
+                                <div *ngIf="!performDynamicSearch" class="input-group-append">
+                                    <button (click)="PerformSearch()" class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm text-right">
+                            <button class="btn btn-primary"><i class="fas fa-users-cog"></i> Create new customer</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>

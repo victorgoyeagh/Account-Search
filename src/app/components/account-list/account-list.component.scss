@@ -1,0 +1,19 @@
+@import './../../../assets/scss/variables.scss';
+
+.accounts-list {
+    margin-top: 30px;
+
+    table {
+        .thead-brand {
+            background-color: $color--main__grey;
+            th {
+                padding: .5rem;
+                border-bottom: 2px solid $color--brand__tide;
+                a {
+                    color: $color--brand__pebble;
+
+                }
+            }
+        }
+    }
+}

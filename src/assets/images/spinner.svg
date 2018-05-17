@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="56px" viewBox="0 0 48 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="progress-spinner" transform="translate(-640.000000, -334.000000)">
+            <g id="Page-1" transform="translate(640.000000, 334.000000)">
+                <path d="M23.8512336,27.8767888 L23.8512336,55.4177119 L47.7028699,41.6474182 L47.7028699,14.1061594 L23.8512336,27.8767888 Z" id="Fill-1" fill="#F9B133"></path>
+                <path d="M0,41.6473175 L23.8513007,55.4179469 L23.8513007,27.8766881 L0,14.1063944 L0,41.6473175 Z" id="Fill-2" fill="#F29100"></path>
+                <path d="M23.8512336,0.335429371 L-6.71328671e-05,14.1063944 L23.8512336,27.8766881 L47.7028699,14.1063944 L23.8512336,0.335429371 Z" id="Fill-3" fill="#FFDD12"></path>
+            </g>
+        </g>
+    </g>
+</svg>

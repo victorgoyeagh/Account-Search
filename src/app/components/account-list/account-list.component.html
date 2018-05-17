@@ -1,0 +1,67 @@
+<section>
+    <div class="accounts-list">
+        <div class="row" *ngIf="!accountsCollection">
+            <div class="col-12">
+                <p>Perform search above to view results below.</p>
+            </div>
+        </div>
+        <div class="row" *ngIf="accountsCollection">
+            <div class="col-12">
+
+                <div class="row" *ngIf="searchTerm">
+                    <div class="col-6">
+                        <p>You searched for: "{{ searchTerm }}"</p>
+                    </div>
+                    <div class="col-6 text-right" *ngIf="searchResults">
+                        <p>{{ 'Page: ' + (searchResults.page+1) + ' of ' + searchResults.totalPages }}</p>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="(accountsCollection | filter: searchTerm).length === 0">
+                    <div class="col-12">
+                        <p>No results found</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12" *ngIf="(accountsCollection | filter: searchTerm).length > 0">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="thead-brand">
+                                    <tr>
+                                        <th scope="col">
+                                            <a (click)="sortByParam='id'" title="Sort by Account ID">Account ID</a>
+                                        </th>
+                                        <th scope="col">
+                                            <a (click)="sortByParam='name'" title="Sort by Account Name">Account name</a>
+                                        </th>
+                                        <th scope="col">
+                                            <a href="#" title="Sort by account number">Account number</a>
+                                        </th>
+                                        <th scope="col">
+                                            <a href="#" title="Sort by account sort code">Sort code</a>
+                                        </th>
+                                        <th scope="col">
+                                            <a (click)="sortByParam='balance'" title="Sort by balance">Balance</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let account of accountsCollection | filter: searchTerm | sortBy: sortByParam">
+                                        <td scope="row">{{ account.id }}</td>
+                                        <td>
+                                            <strong>{{ account.name | capitalise }}</strong>
+                                        </td>
+                                        <td [innerHTML]="account.identifiers[0].accountNumber"></td>
+                                        <td [innerHTML]="account.identifiers[0].sortCode"></td>
+                                        <td [innerHTML]="'&pound;' + account.balance"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

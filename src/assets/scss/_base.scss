@@ -1,0 +1,22 @@
+body {
+    background: $color--main__white;
+    >* {
+        font-size: 12px;
+        color: $color--brand__pebble;
+        font-family: $font-brand;
+    }
+}
+
+main {
+    padding: 50px 0 20px;
+}
+
+button {
+
+    &.btn {
+        &.btn-primary {
+            border-color: $color--brand__wave;
+            background-color: $color--brand__wave;
+        }
+    }
+}

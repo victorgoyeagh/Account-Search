@@ -1,0 +1,23 @@
+
+.modulr-header {
+
+    &--strip {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        background-image: url('/assets/images/bg-blocks.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    &--logo {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        background-color: transparent;
+        background-image: url('/assets/images/logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-indent: -999999px;
+        overflow: hidden;
+    }
+}

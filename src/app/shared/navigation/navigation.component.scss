@@ -1,0 +1,19 @@
+@import './../../../assets/scss/variables.scss';
+
+.modulr-navigation {
+    background-color: $color--brand__pebble;
+
+    &--item {
+        a {
+            display: block;
+            padding: .7rem 0rem 0.3rem 0rem;
+            border-bottom: 5px solid $color--brand__pebble;
+            margin-right: 2rem;
+            color: white;
+            &:hover {
+                text-decoration: none;
+                border-bottom: 5px solid $color--brand__spray;
+            }
+        }
+    }
+}
