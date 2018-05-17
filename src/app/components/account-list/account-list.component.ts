@@ -21,7 +21,6 @@ export class AccountListComponent implements OnInit, OnChanges, OnDestroy {
     private searchResults: ISearchResult = undefined;
     private accountsCollection: Array<ISearchResultContentItem> = undefined;
 
-    //@ViewChildren("accountListItem") accountListItem: QueryList<any>;
     @Input() private set inputSearchTerm(value: string) {
         this.searchTerm = value;
     }
@@ -46,7 +45,7 @@ export class AccountListComponent implements OnInit, OnChanges, OnDestroy {
 
                     if (response.status == 200) {
                         this.searchResults = <ISearchResult>response.json(); 
-                        this.accountsCollection = this.searchResults.content;
+                        this.accountsCollection = <Array<ISearchResultContentItem>>this.searchResults.content;
                     }
                 }
             )
