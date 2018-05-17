@@ -12,7 +12,23 @@ run "npm start"
 
 open localhost:4200 in chrome browser
 
-#
+### Todo://
+
+Pagination
+
+Sort account number and sort code
+
+Search multiple columns
+
+reorganise sass files (import _variables only once)
+
+overwrite bootstrap default border radius 
+
+Tidy header and ‘create new customer’ button in mobile view
+
+spinner/delay
+
+Write tests
 
 ## Development server
 
