@@ -15,13 +15,13 @@ import { Subject, Subscription } from 'rxjs';
 })
 export class AccountListComponent implements OnInit, OnChanges, OnDestroy {
     private searchTerm: string = undefined;
-    private result: Array<any>;
     private sortByParam: string = "name";
-    private subs: Subscription;
+    private initialText = "Perform search above to view results below.";
+    private subs: Subscription = undefined;
     private searchResults: ISearchResult = undefined;
     private accountsCollection: Array<ISearchResultContentItem> = undefined;
 
-    @Input() private set inputSearchTerm(value: string) {
+    @Input() public set inputSearchTerm(value: string) {
         this.searchTerm = value;
     }
 
@@ -37,14 +37,14 @@ export class AccountListComponent implements OnInit, OnChanges, OnDestroy {
 
     ngOnChanges(changes: SimpleChanges) {
         if (!changes.inputSearchTerm.firstChange) {
-
+            
             let curValue = changes.inputSearchTerm.currentValue;
 
             this.subs = this._accountSearchService.SearchAccounts()
                 .subscribe((response: Response) => {
 
                     if (response.status == 200) {
-                        this.searchResults = <ISearchResult>response.json(); 
+                        this.searchResults = <ISearchResult>response.json();
                         this.accountsCollection = <Array<ISearchResultContentItem>>this.searchResults.content;
                     }
                 }
@@ -53,7 +53,8 @@ export class AccountListComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.subs.unsubscribe();
+        if (this.subs)
+            this.subs.unsubscribe();
     }
 
 }

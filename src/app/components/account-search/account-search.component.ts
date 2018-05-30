@@ -13,13 +13,12 @@ export class AccountSearchComponent implements OnInit, OnDestroy, AfterViewInit 
     private subs: Subscription;
     private searchTerm: string;
     private performDynamicSearch: boolean = false;
-    private fmSearchPanel = new FormGroup({
+    public fmSearchPanel = new FormGroup({
         txtSearch: new FormControl('')
     })
 
     @Output() outputSearchTerm = new EventEmitter<any>();
     @ViewChild("txtSearch") txtSearch: ElementRef;
-    @ViewChild("dynamicSearch") dynamicSearch: ElementRef;
 
     constructor(
     ) {

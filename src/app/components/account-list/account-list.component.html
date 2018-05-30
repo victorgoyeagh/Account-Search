@@ -1,11 +1,11 @@
 <section>
-    <div class="accounts-list">
-        <div class="row" *ngIf="!accountsCollection">
+    <div id="accounts-list" class="accounts-list">
+        <div id="accountsListNoData" class="row" *ngIf="!accountsCollection">
             <div class="col-12">
-                <p>Perform search above to view results below.</p>
+                <p>{{ initialText }}</p>
             </div>
         </div>
-        <div class="row" *ngIf="accountsCollection">
+        <div id="accountsListWithData" class="row accountsListWithData" *ngIf="accountsCollection">
             <div class="col-12">
 
                 <div class="row" *ngIf="searchTerm">
@@ -26,7 +26,8 @@
                 <div class="row">
                     <div class="col-12" *ngIf="(accountsCollection | filter: searchTerm).length > 0">
                         <div class="table-responsive">
-                            <table class="table">
+                            
+                            <table id="accountsListTable" class="table">
                                 <thead class="thead-brand">
                                     <tr>
                                         <th scope="col">

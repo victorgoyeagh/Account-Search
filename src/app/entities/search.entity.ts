@@ -15,13 +15,14 @@ export interface ISearchResultContentItem {
         currency: string,
         status: IContentItemStatus,
         identifiers: Array<IIdentifiers>
-        customerId: string
+        customerId: string,
+        externalReference: string
 }
 
 export interface IIdentifiers {
     type: string,
-    accountNumber: number,
-    sortCode: number
+    accountNumber: string,
+    sortCode: string
 }
 
 export enum IContentItemStatus {
